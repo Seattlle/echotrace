@@ -1,0 +1,13 @@
+workflows:
+  windows-workflow:
+    name: Windows Build
+    instance_type: windows_x2_m1
+    environment:
+      flutter: stable
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build Windows exe
+        script: flutter build windows --release
+    artifacts:
+      - build/windows/runner/Release/echotrace.exe
