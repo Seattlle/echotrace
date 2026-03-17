@@ -485,6 +485,7 @@ class CliExportRunner {
       if (!deleted && await targetFile.exists()) {
         final unlockErr = goFfi.forceUnlockFile(targetPath);
         if (unlockErr == null) {
+          await Future.delayed(Duration(milliseconds: 500));
           try {
             await targetFile.delete();
             deleted = true;
@@ -501,8 +502,16 @@ class CliExportRunner {
       }
 
       if (!deleted && await targetFile.exists()) {
-        _logError('  无法删除或重命名旧文件，跳过');
-        return false;
+        // 即使无法删除或重命名，也尝试复制覆盖
+        try {
+          await File(sourceTempPath).copy(targetPath);
+          _log('  复制覆盖成功');
+          return true;
+        } catch (e) {
+          _logError('  复制覆盖失败: $e');
+          _logError('  无法删除或重命名旧文件，跳过');
+          return false;
+        }
       }
     } else {
       final parentDir = targetFile.parent;
