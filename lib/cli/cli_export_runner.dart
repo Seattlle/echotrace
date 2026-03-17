@@ -586,10 +586,11 @@ class CliExportRunner {
           }
 
           _log('使用手动 wxid 扫描数据库: $manualWxid');
+          final nonNullManualWxid = manualWxid!;
           results.addAll(
             await _scanDbStorageDirectory(
               dbStorageDir,
-              manualWxid,
+              nonNullManualWxid,
               documentsPath,
             ),
           );
