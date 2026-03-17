@@ -21,10 +21,15 @@ class CliExportRunner {
   StreamSubscription<ProcessSignal>? _sigTermSub;
 
   Future<int?> tryHandle(List<String> args) async {
+    _log('收到参数: ${args.join(' ')}'); // 调试输出
+
     final parsed = _parseArgs(args);
     if (parsed == null) {
+      _log('未检测到CLI参数，继续启动UI'); // 调试输出
       return null; // 未检测到 CLI 参数，继续正常启动 UI
     }
+
+    _log('检测到CLI参数，进入CLI模式'); // 调试输出
 
     // 初始化 CLI 本地日志文件，方便无控制台输出时排查
     final logPath = PathUtils.join(
@@ -226,6 +231,8 @@ class CliExportRunner {
     final wantsUpdate = args.any((a) => a == '--update' || a == '-u');
     final exportIndex =
         args.indexWhere((a) => a == '-e' || a == '--export' || a == '-export');
+
+    _log('解析参数: wantsUpdate=$wantsUpdate, exportIndex=$exportIndex, wantsHelp=$wantsHelp'); // 调试输出
 
     if (!wantsUpdate && exportIndex == -1) {
       if (wantsHelp) {
