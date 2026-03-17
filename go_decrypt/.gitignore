@@ -1,0 +1,19 @@
+# Go 构建产物
+*.dll
+*.dylib
+*.so
+*.h
+*.exe
+
+# Go 模块缓存
+go.sum
+
+# IDE 文件
+.vscode/
+.idea/
+*.iml
+
+# 临时文件
+*.log
+*.tmp
+

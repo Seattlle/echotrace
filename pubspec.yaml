@@ -1,0 +1,121 @@
+name: echotrace
+description: "A new Flutter project."
+publish_to: 'none'
+version: 3.1.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+  
+  # 数据库和加密相关
+  sqflite_common_ffi: ^2.3.0
+  crypto: ^3.0.3
+  pointycastle: ^4.0.0
+
+  fl_chart: ^0.64.0      # 用于绘制图表
+  file_saver: ^0.2.12    # 用于导出JSON文件
+
+  
+  # 文件操作和路径
+  file_picker: ^10.3.3
+  path_provider: ^2.1.1
+  path: ^1.9.0
+  
+  # 配置存储
+  shared_preferences: ^2.2.2
+  
+  # 状态管理
+  provider: ^6.1.1
+  
+  # UI 组件
+  shimmer: ^3.0.0
+  
+  # XML 解析
+  xml: ^6.4.2
+  
+  # 压缩解压
+  archive: 4.0.7
+  cryptography: ^2.7.0
+  zstd: ^0.0.1-dev.2
+  
+  # HTTP 下载
+  http: ^1.2.0
+  
+  # FFI 用于直接调用 native 库
+  ffi: ^2.1.0
+  win32: ^5.5.1
+  
+  # Excel 导出
+  syncfusion_flutter_xlsio: ^31.2.4
+  
+  # URL 启动
+  url_launcher: ^6.3.0
+  
+  # 日期格式化
+  intl: ^0.20.2
+  
+  # 包信息
+  package_info_plus: ^9.0.0
+  
+  # 图片处理
+  image: ^4.1.7
+  cached_network_image: ^3.3.1
+
+  jieba_flutter: ^0.2.0
+
+  msix: ^3.16.8
+  audioplayers: ^5.2.1
+  flutter_lame:
+    path: third_party/flutter_lame
+  dart_lame:
+    path: third_party/dart_lame
+
+dependency_overrides:
+  dart_lame:
+    path: third_party/dart_lame
+ 
+msix_config:
+  display_name: EchoTrace
+  publisher_display_name: EchoTrace
+  identity_name: com.echotrace.app
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/HarmonyOS_SansSC/
+    - assets/dll/
+    - assets/silk_v3_decoder.exe
+
+  
+  # 自定义字体配置
+  fonts:
+    - family: HarmonyOS Sans SC
+      fonts:
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Thin.ttf
+          weight: 100
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Light.ttf
+          weight: 300
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Regular.ttf
+          weight: 400
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Medium.ttf
+          weight: 500
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Semibold.ttf
+          weight: 600
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Bold.ttf
+          weight: 700
+        - asset: assets/HarmonyOS_SansSC/HarmonyOS_SansSC_Black.ttf
+          weight: 900

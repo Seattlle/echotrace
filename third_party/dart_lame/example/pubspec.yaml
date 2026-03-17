@@ -1,0 +1,16 @@
+name: example
+description: Example of how to use dart_lame
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  dart_lame:
+    path: ../
+  args: ^2.3.1
+  wav: ^1.1.0
+
+dev_dependencies:
+  lints: ^2.0.0
