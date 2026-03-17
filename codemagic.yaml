@@ -1,7 +1,7 @@
 workflows:
   windows-workflow:
     name: Windows Build
-    instance_type: windows_x2_m1
+    instance_type: windows_x2
     environment:
       flutter: stable
     scripts:
